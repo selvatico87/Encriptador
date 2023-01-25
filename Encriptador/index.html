@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css"> 
+    <script type="text/javascript" src="app.js"></script>
+    
   </head>
 
   <body>
@@ -17,22 +22,40 @@
     </header>
     <main>
       <div class="caja-texto-a-encriptar">
-        <form action="">
-          <label for="texto-encriptar">Ingrese el texto aquí</label>
-          <input type="text" id="texto-encriptar" class="input-texto" required>
-          <p class="parrafo-solo-minusculas">Solo letras minúsculas y sin acentos</p>
-          <input type="submit" value="Encriptar" class="boton-encriptar">
-          <input type="submit" value="Desencriptar" class="boton-desencriptar">
+        <form>
+          <input type="text-input" id="texto-encriptar" class="input-texto" placeholder="Ingrese el texto aquí" required>
         </form>
       </div>
+      <div class="condiciones">
+        <ul class="horizontal">
+          <li>
+            <img src="imagenes/exclamacion.png" alt="signo exclamación">
+          </li>
+          <li>
+            <p class="parrafo-solo-minusculas">Solo letras minúsculas y sin acentos</p>
+          </li>
+        </ul>
+      </div>
+      <div class="caja-botones">
+        <button type="button" name="button" class="boton-encriptar" onclick="encriptar()">Encriptar</button>
+        <button type="button" name="button"  class="boton-desencriptar" onclick="desencriptar()">Desencriptar</button>
+      </div>
+          
       <div class="caja-resultado">
-        <img src="imagenes/Muñeco.png" alt="persona buscando en diamante con lupa">
-        <p class="texto-ningun-mensaje">
-          Ningún mensaje fue encontrado
-        </p>
-        <p class="texto-ingresa-debajo-muñeco">
-          Ingresa el texto que desees encriptar o desencriptar.
-        </p>
+        <div class="caja-texto-resultado" id="caja-texto-resultado">
+          <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. Libero, sodales duis fames id diam feugiat aliquet non egestas.</p>
+        </div>
+        <button type="button" name="button" class="boton-copiar" id="boton-copiar" onclick=copy()>Copiar</button>
+        <img class="muneco" id="muneco" src="imagenes/Muñeco.png" alt="persona buscando en diamante con lupa">
+        <div class="caja-texto-debajo-muneco" id="caja-texto-debajo-muneco">
+          <p class="texto-ningun-mensaje">
+            Ningún mensaje fue encontrado
+          </p>
+          <p class="texto-ingresa-debajo-muneco">
+            Ingresa el texto que desees encriptar o desencriptar.
+          </p>
+        </div>
+        
       </div>
     </main>
     <footer>
